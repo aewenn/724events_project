@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Form from "./index";
 
 describe("When Events is created", () => {
@@ -21,9 +21,9 @@ describe("When Events is created", () => {
           bubbles: true,
         })
       );
-      await screen.findByText("En cours");
-      await screen.findByText("Envoyer");
-      expect(onSuccess).toHaveBeenCalled();
+    await screen.findByText("En cours"); // Attente de l'affichage du texte "En cours" dans l'interface
+    await waitFor(() => screen.findByText("Envoyer"), { timeout: 2000 }); // Attente de l'affichage du bouton "Envoyer" avec une durée maximale de 2 secondes
+    expect(onSuccess).toHaveBeenCalled(); // Vérification que la fonction onSuccess a été appelée avec succès
     });
   });
 });
