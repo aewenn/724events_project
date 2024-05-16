@@ -60,7 +60,7 @@ const { last } = useData() // Utilisation du contexte de données pour obtenir l
       <section id="notre-equipe" className="PeoplesContainer">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
-        <div className="ListContainer">
+        <div className="ListContainer" data-testid="People-list">
           <PeopleCard
             imageSrc="/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.png"
             name="Samira"
@@ -115,7 +115,7 @@ const { last } = useData() // Utilisation du contexte de données pour obtenir l
         </Modal>
       </div>
     </main>
-    <footer className="row">
+    <footer className="row" data-testid="Footer">
       <div className="col presta">
         <h3>Notre dernière prestation</h3>
                   {last && ( // Vérification que last est bien défini et non-nul

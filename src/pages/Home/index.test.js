@@ -29,18 +29,23 @@ describe("When Form is created", () => {
 
 
 describe("When a page is created", () => { // Vérifie le comportement lorsqu'une page est créée
-  
+
   it("a list of events is displayed", async () => {  // Vérifie si une liste d'évènements est affichée sur la page
     render(<Home />); // Rend le composant Home pour le test
     await screen.findByTestId("Events-list"); // Attend le rendu de "Events-list" dans l'interface utilisateur
   }) // Le test réussit si l'élément est trouvé
 
-  it("a list a people is displayed", () => {
-    // to implement
-  })
-  it("a footer is displayed", () => {
-    // to implement
-  })
+  it("a list a people is displayed", async () => { // Vérifie si une liste de personnes est affichée sur la page
+    render(<Home />); // Rend le composant Home pour le test
+    const PeopleList = screen.getByTestId('People-list'); // Sélectionne l'élément représentant la liste de personnes
+    expect(PeopleList).toBeInTheDocument(); // Vérifie si la liste de personnes est présente dans l'interface utilisateur
+  }) // Le test réussit si l'élément est trouvé
+
+  it("a footer is displayed", async () => { // Vérifie si un footer est affiché sur la page
+    render(<Home />); // Rend le composant Home pour le test
+    await screen.findAllByTestId("Footer"); // Attend le rendu de "Footer" dans l'interface utilisateur
+  }) // Le test réussit si l'élément est trouvé
+
   it("an event card, with the last event, is displayed", () => {
     // to implement
   })
