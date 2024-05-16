@@ -11,5 +11,5 @@ describe("Date helper", () => {
             expect(getMonth(date)).toBe("juillet"); // Vérifie si la fonction getMonth retourne 'juillet' pour cette date
         });
     });
-}) // Le test réussit si la fonction retourne bien 'janvier' et 'juillet'
+}) // Les tests réussissent si la fonction retourne bien 'janvier' et 'juillet'
 
