@@ -117,7 +117,7 @@ const { last } = useData() // Utilisation du contexte de données pour obtenir l
     </main>
     <footer className="row">
       <div className="col presta">
-        <h3>Notre derniére prestation</h3>
+        <h3>Notre dernière prestation</h3>
                   {last && ( // Vérification que last est bien défini et non-nul
         <EventCard
           imageSrc={last?.cover}
@@ -154,7 +154,7 @@ const { last } = useData() // Utilisation du contexte de données pour obtenir l
           Une agence événementielle propose des prestations de service
           spécialisées dans la conception et l&apos;organisation de divers événements
           tels que des événements festifs, des manifestations sportives et
-          culturelles, des événements professionnels
+          culturelles, des événements professionnels.
         </p>
       </div>
     </footer>
