@@ -28,10 +28,13 @@ describe("When Form is created", () => {
 });
 
 
-describe("When a page is created", () => {
-  it("a list of events is displayed", () => {
-    // to implement
-  })
+describe("When a page is created", () => { // Vérifie le comportement lorsqu'une page est créée
+  
+  it("a list of events is displayed", async () => {  // Vérifie si une liste d'évènements est affichée sur la page
+    render(<Home />); // Rend le composant Home pour le test
+    await screen.findByTestId("Events-list"); // Attend le rendu de "Events-list" dans l'interface utilisateur
+  }) // Le test réussit si l'élément est trouvé
+
   it("a list a people is displayed", () => {
     // to implement
   })
