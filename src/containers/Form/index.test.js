@@ -21,9 +21,9 @@ describe("When Events is created", () => {
           bubbles: true,
         })
       );
-    await screen.findByText("En cours"); // Attente de l'affichage du texte "En cours" dans l'interface
-    await waitFor(() => screen.findByText("Envoyer"), { timeout: 2000 }); // Attente de l'affichage du bouton "Envoyer" avec une durée maximale de 2 secondes
-    expect(onSuccess).toHaveBeenCalled(); // Vérification que la fonction onSuccess a été appelée avec succès
+    await screen.findByText("En cours"); // Attente que le texte "En cours" soit affiché dans l'interface
+    await waitFor(() => screen.findByText("Envoyer"), { timeout: 2000 }); // Attente que le bouton "Envoyer" soit affiché dans un délai maximum de 2 secondes
+    expect(onSuccess).toHaveBeenCalled(); // Vérification que la fonction onSuccess a bien été appelée
     });
   });
 });
