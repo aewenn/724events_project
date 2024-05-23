@@ -37,7 +37,7 @@ describe("When a page is created", () => { // Vérifie le comportement lorsqu'un
 
   it("a list a people is displayed", async () => { // Vérifie si une liste de personnes est affichée sur la page
     render(<Home />); // Rend le composant Home pour le test
-    const PeopleList = screen.getByTestId('People-list'); // Sélectionne l'élément représentant la liste de personnes
+    const PeopleList = await screen.findByTestId('People-list'); // Attend le rendu de l'élément représentant la liste de personnes
     expect(PeopleList).toBeInTheDocument(); // Vérifie si la liste de personnes est présente dans l'interface utilisateur
   }) // Le test réussit si l'élément est trouvé
 
@@ -46,7 +46,9 @@ describe("When a page is created", () => { // Vérifie le comportement lorsqu'un
     await screen.findAllByTestId("Footer"); // Attend le rendu de "Footer" dans l'interface utilisateur
   }) // Le test réussit si l'élément est trouvé
 
-  it("an event card, with the last event, is displayed", () => {
-    // to implement
-  })
+  it("an event card, with the last event, is displayed", async () => { // Vérifie si une carte d'évènement contenant le dernier évènement est affichée
+    render(<Home />); // Rend le composant Home pour le test
+    const lastEvent = await screen.findByTestId("lastEvent"); // Attend le rendu de "lastEvent" 
+    expect(lastEvent).toBeInTheDocument(); // Vérifie si l'élément du dernier évènement est présent dans le DOM
+  }) // Le test réussit si l'élément est trouvé et présent dans le DOM
 });

@@ -116,7 +116,7 @@ const { last } = useData() // Utilisation du contexte de données pour obtenir l
       </div>
     </main>
     <footer className="row" data-testid="Footer">
-      <div className="col presta">
+      <div className="col presta" data-testid="lastEvent">
         <h3>Notre dernière prestation</h3>
                   {last && ( // Vérification que last est bien défini et non-nul
         <EventCard
